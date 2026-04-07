@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +10,8 @@ import { motion } from "framer-motion";
 
 const Auth = () => {
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(true);
+  const location = useLocation();
+  const [isLogin, setIsLogin] = useState(!location.state?.isSignup);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -86,7 +87,7 @@ const Auth = () => {
             <Heart className="w-5 h-5 text-primary-foreground" />
           </div>
           <span className="font-display font-extrabold text-2xl text-foreground">
-            Second<span className="text-primary">Servings</span>
+            Meal<span className="text-primary">Bridge</span>
           </span>
         </div>
 

@@ -61,7 +61,7 @@ const Navbar = () => {
               </Button>
               <Button
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-display font-bold text-sm rounded-lg"
-                onClick={() => navigate("/auth")}
+                onClick={() => navigate("/auth", { state: { isSignup: true } })}
               >
                 Sign Up Free
               </Button>
@@ -92,7 +92,7 @@ const Navbar = () => {
           ) : (
             <Button
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-display font-bold rounded-lg"
-              onClick={() => { navigate("/auth"); setOpen(false); }}
+              onClick={() => { navigate("/auth",{ state: { isSignup: true } }); setOpen(false); }}
             >
               Sign Up Free
             </Button>
