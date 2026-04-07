@@ -9,11 +9,11 @@ const Footer = () => (
             <Heart className="w-4 h-4 text-primary-foreground" />
           </div>
           <span className="font-display font-extrabold text-lg text-primary-foreground">
-            SecondServings
+            MealBridge
           </span>
         </div>
         <p className="text-sm font-body text-center">
-          © 2026 SecondServings. Turning surplus into smiles, one meal at a time.
+          © 2026 MealBridge. Turning surplus into smiles, one meal at a time.
         </p>
         <div className="flex gap-6 text-sm font-body">
           <a href="#" className="hover:text-primary-foreground transition-colors">Privacy</a>

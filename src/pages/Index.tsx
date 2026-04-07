@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import FoodGrid from "@/components/FoodGrid";
 import HowItWorks from "@/components/HowItWorks";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -12,6 +13,7 @@ const Index = () => (
     <StatsBar />
     <FoodGrid />
     <HowItWorks />
+      <TestimonialsSection />
     <Footer />
   </div>
 );
