@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ArrowRight, Heart, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-food.jpg";
+import DonateHotelModal from "@/components/DonateHotelModal";
+
 
 const HeroSection = () => {
+   const [modalOpen, setModalOpen] = useState(false); 
   return (
     <section className="relative overflow-hidden">
       {/* Background image with overlay */}
@@ -31,8 +35,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-primary-foreground mb-6"
           >
-            Turn Surplus Into
-            <span className="block text-primary"> Second Servings</span>
+            Turn Surplus Into Meals
+            <span className="block text-primary"> With Meal Bridge</span>
           </motion.h1>
 
           <motion.p
@@ -56,13 +60,18 @@ const HeroSection = () => {
               Find Food Near You
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-display font-bold text-base px-8 py-6 rounded-xl backdrop-blur-sm">
-              <Building2 className="mr-2 w-5 h-5" />
-              Donate as a Hotel
-            </Button>
+            <Button size="lg" 
+  variant="outline" 
+    onClick={() => setModalOpen(true)}
+  className="border-white/40 text-primary-foreground bg-white/10 hover:bg-white/25 hover:border-white/70 hover:text-white font-display font-bold text-base px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-200 hover:shadow-lg hover:shadow-white/10"
+>
+  <Building2 className="mr-2 w-5 h-5" />
+  Donate as a Hotel
+</Button>
           </motion.div>
         </div>
       </div>
+      <DonateHotelModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
