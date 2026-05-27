@@ -7,14 +7,16 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-background  w-full overflow-x-hidden">
     <Navbar />
+     <main className="pt-16 pb-48">
     <HeroSection />
     <StatsBar />
     <FoodGrid />
     <HowItWorks />
-      <TestimonialsSection />
+    <TestimonialsSection />
     <Footer />
+    </main>
   </div>
 );
 

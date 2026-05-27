@@ -7,6 +7,15 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index.tsx";
 import Auth from "./pages/Auth.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import AboutPage from "./pages/About.tsx";
+import HowItWorksPage from "./pages/HowItWorksPage.tsx";
+import BrowseFoodPage from "./pages/BrowseFoodPage.tsx";
+import HotelsPage from "./pages/HotelsPage.tsx";
+import Hotels from "./pages/Hotels";
+import HotelList from "./pages/HotelList.tsx";
+import DonationsPage from "./pages/DonationsPage.tsx";
+import HotelDetail from "./pages/HotelDetail.tsx";
+import DonationOrdersPage from "@/pages/DonationOrdersPage";
 
 const queryClient = new QueryClient();
 
@@ -17,12 +26,23 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AuthProvider>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/auth" element={<Auth />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <div className="pb-20">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/how-it-works" element={<HowItWorksPage />} />
+              <Route path="/browse" element={<BrowseFoodPage />} />
+              <Route path="/donations" element={<DonationsPage />} />
+              <Route path="/hotels" element={<HotelsPage />} />
+              <Route path="/hotels/register" element={<Hotels />} />
+              <Route path="/hotels/list" element={<HotelList />} />
+              <Route path="/hotels/:id" element={<HotelDetail />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/donation-orders" element={<DonationOrdersPage />} />
+              
+            </Routes>
+          </div>
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>

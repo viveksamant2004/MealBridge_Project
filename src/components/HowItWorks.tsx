@@ -25,7 +25,8 @@ const steps = [
 ];
 
 const HowItWorks = () => (
-  <section className="bg-card py-16 md:py-24">
+  // ✅ id="how-it-works" enables navbar smooth scroll
+  <section id="how-it-works" className="bg-card py-16 md:py-24">
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

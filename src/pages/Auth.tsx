@@ -35,20 +35,14 @@ const Auth = () => {
           password,
           options: {
             emailRedirectTo: window.location.origin,
-            data: { display_name: displayName },
+            data: {
+              full_name: displayName,   // ✅ added
+              org_name: orgName,        // ✅ added
+              role: userType,           // ✅ added
+            },
           },
         });
         if (error) throw error;
-
-        // Update profile with org info
-        const { data: { user } } = await supabase.auth.getUser();
-        if (user) {
-          await supabase.from("profiles").update({
-            organization_name: orgName,
-            user_type: userType,
-            display_name: displayName,
-          }).eq("user_id", user.id);
-        }
 
         toast.success("Account created! Check your email to verify.");
         navigate("/");
